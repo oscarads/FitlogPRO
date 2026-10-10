@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>FitLog Pro</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+@media(min-width:640px){
+  body{background:#030810;display:flex;justify-content:center;align-items:flex-start;}
+  #root{width:100%;max-width:680px;box-shadow:0 0 80px rgba(0,180,216,0.1);min-height:100vh;}
+}
+@media(min-width:1100px){
+  #root{max-width:800px;}
+}
+@media(min-width:1400px){
+  #root{max-width:900px;}
+}
+body{margin:0;background:#060d18;font-family:'DM Sans',system-ui,sans-serif;color:#fff;overscroll-behavior:none;}
+input[type=number]{-moz-appearance:textfield;}
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{-webkit-appearance:none;}
+::-webkit-scrollbar{display:none;}
+select option{background:#0a1628;}
+input,textarea,select{color:#fff!important;}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<!--
+  ARQUIVOS SEPARADOS (nessa ordem, porque cada um usa coisas definidas nos anteriores):
+  core.js       -> config, storage (Sheets/localStorage), utils, planos padrão, grupos musculares
+  treino.js     -> engine de progressão, aquecimento, treino ativo, editor de plano
+  progresso.js  -> gráficos de progresso, volume, histórico
+  alunos.js     -> avaliação física, cadastro de aluno, cobrança
+  financeiro.js -> tela financeira (receitas/despesas)
+  meudia.js     -> hábitos, tarefas, metas
+  agenda.js     -> AGENDA (isolado de propósito, é onde mais mexemos/bugou)
+  app.js        -> App raiz (junta todas as telas) + renderização final
+-->
+<script type="text/babel" src="core.js"></script>
+<script type="text/babel" src="treino.js"></script>
+<script type="text/babel" src="progresso.js"></script>
+<script type="text/babel" src="alunos.js"></script>
+<script type="text/babel" src="financeiro.js"></script>
+<script type="text/babel" src="meudia.js"></script>
+<script type="text/babel" src="agenda.js"></script>
+<script type="text/babel" src="app.js"></script>
+</body>
+</html>
